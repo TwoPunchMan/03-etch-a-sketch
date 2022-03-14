@@ -12,7 +12,3 @@
 	text-align: center;
 	border: 2px solid black;
 }
-
-.grid-item:hover {
-	background-color: green;
-}
