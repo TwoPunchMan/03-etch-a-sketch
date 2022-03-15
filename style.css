@@ -1,14 +1,29 @@
+h1 {
+	text-align: center;
+}
+
+.grid-clear {
+	width: 150px;
+	height: 150px;
+	font-size: 20px;
+	margin: 0 auto;
+	margin-bottom: 22px;
+	margin-top: 22px;
+	display: block;
+}
+
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	gap: 25px 25px;
+	justify-content: center;
+	align-content: center;
 	background-color: yellow;
 	padding: 10px;
 }
 
 .grid-item {
 	color: blue;
-	padding: 15px;
+	padding: 8px;
 	text-align: center;
 	border: 2px solid black;
 }
