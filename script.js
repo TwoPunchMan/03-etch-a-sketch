@@ -2,13 +2,29 @@ const gridContainer = document.querySelector('.grid-container');
 const gridItems = document.querySelectorAll('.grid-item');
 const buttonClearAll = document.querySelector('.grid-clear');
 
-// 
+let rand = () => Math.floor(Math.random() * 256);
+let randBlack = () => Math.random();
+
+function setRandomRGB() {
+	let r = rand();
+	let g = rand();
+	let b = rand();
+	let rgb;
+
+	if (randBlack() <= 0.1) {
+		rgb = '(0,0,0)';	
+	} else {
+		rgb = `(${r},${g},${b})`;
+	}
+
+	return rgb;
+}
 
 buttonClearAll.addEventListener('click', resetBoard);
 
 gridItems.forEach(item => 
 	item.addEventListener('mouseover', function () {
-		item.style.cssText = "background-color: green";
+		item.style.cssText = `background-color: rgb${setRandomRGB()}`;
 }));
 
 function resetBoard() {
@@ -36,7 +52,7 @@ function createNewGrid(size) {
 	for (let i = 1; i <= square_vol; i++) {
 		const div = document.createElement('div');
 		div.addEventListener('mouseover', function () {
-			div.style.cssText = "background-color: green";
+			div.style.cssText = `background-color: rgb${setRandomRGB()}`;
 		});
 		div.classList.add('grid-item');
 		div.textContent = i;
